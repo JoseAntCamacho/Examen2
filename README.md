@@ -1,2 +1,5 @@
 # Examen2
-Esta es la realización del Examen 2
+
+## 1. Pregunta 1.
+
+Aquí respondemos.
