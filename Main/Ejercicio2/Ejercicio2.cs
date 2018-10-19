@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*namespace Ejercicio2
+namespace Ejercicio2
 {
     class Ejercicio2
     {
@@ -39,4 +39,4 @@ using System.Threading.Tasks;
             // Select * from a Left join b on a.Id = b.Id where b.Id is null
         }
     }
-}*/
+}
