@@ -4,44 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*namespace Ejercicio2
+/*namespace Ejercicio4
 {
-    
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var a = new int[] {1,2,3};
-            var b = new int[] {1,2};
-
-            var itemsANoB = a.Where(c => !b.Contains(c)).ToList();
-            var itemsANoB2 = a.Except(b).ToList();
-
-            Console.WriteLine("Prueba con el método Contains()");
-
-            foreach(var item in itemsANoB)
-            {
-                Console.WriteLine(item);
-            }           
-
-            Console.WriteLine("Prueba con el método Except()");
-            
-            foreach(var item in itemsANoB2)
-            {
-                Console.WriteLine(item);
-            }
-            
-            Console.ReadLine();
-
-            // la secuencia SQL sería:
-            // Select * from a Left join b on a.Id = b.Id where b.Id is null
-        }
-    }
-}*/
-
-/*namespace Ejercicio3
-{
-    class Program
+    class Ejercicio4
     {
         public static IEnumerable<int> Pares(int from, int to)
         {
@@ -58,7 +23,6 @@ using System.Threading.Tasks;
                 }
             }
         }
-
         public static IEnumerable<int> MayoresDe10(int from, int to)
         {
             if (to < from || to <= 10 || from < 0)
@@ -80,11 +44,9 @@ using System.Threading.Tasks;
                     {
                         yield return i;
                     }
-                }
-                
+                }                
             }            
         }
-
         public static IEnumerable<int> MenoresDe10(int from, int to)
         {
             if (to < from || from >=10 || from < 0)
@@ -108,25 +70,9 @@ using System.Threading.Tasks;
                     }
                 }
             }            
-        }
-        
+        }        
         static void Main(string[] args)
-        {
-            try
-            {
-                var items = Pares(20,30);
-                foreach (var item in items)
-                {
-                    Console.WriteLine(item);
-                }
-                Console.WriteLine("__________________________");
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-
+        {            
             try
             {
                 var from = 5;
@@ -145,40 +91,7 @@ using System.Threading.Tasks;
             {
                 Console.WriteLine(e.Message);
             }
-
-
             Console.ReadLine();
         }
     }
-}*/
-
-
-/*namespace Pruebas
-{
-    var lstFacturas = new List<Factura>
-            {
-            new Factura {IdFactura = 1, Importe = 500 },
-            new Factura {IdFactura = 2, Importe = 1200 },
-            new Factura {IdFactura = 3, Importe = 400 },
-            new Factura {IdFactura = 4, Importe = 3500 }
-            };
-
-    var lstDescuentos = new List<FacturaDescuento>
-            {
-                new FacturaDescuento {IdFactura = 2, Descuento = 20 },
-                new FacturaDescuento {IdFactura = 4, Descuento = 100 }
-            };
-
-    var lstLeftJoin =
-        (from fact in lstFacturas
-        join desc in lstDescuentos on fact.IdFactura equals desc.IdFactura into FactDesc
-        from fd in FactDesc.DefaultIfEmpty()
-        select new
-        {
-            IdFactura = fact.IdFactura,
-            ImporteBase = fact.Importe,
-            ImporteACobrar = (fd == null) ? fact.Importe : fact.Importe - fd.Descuento
-        }
-        ).ToList();
-         
 }*/
