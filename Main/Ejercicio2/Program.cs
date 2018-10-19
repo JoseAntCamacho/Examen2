@@ -17,16 +17,18 @@ using System.Threading.Tasks;
             var itemsANoB = a.Where(c => !b.Contains(c)).ToList();
             var itemsANoB2 = a.Except(b).ToList();
 
+            Console.WriteLine("Prueba con el método Contains()");
+
             foreach(var item in itemsANoB)
             {
                 Console.WriteLine(item);
             }           
 
-            var items = from a1 in a join b1 in b on a1 equals b1 select a1;
-
-            foreach(var i in items)
+            Console.WriteLine("Prueba con el método Except()");
+            
+            foreach(var item in itemsANoB2)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(item);
             }
             
             Console.ReadLine();
@@ -37,55 +39,118 @@ using System.Threading.Tasks;
     }
 }*/
 
-namespace Ejercicio3
+/*namespace Ejercicio3
 {
     class Program
     {
-        public static List<int> Pares(List<int> l)
+        public static IEnumerable<int> Pares(int from, int to)
         {
-            var lista = new List<int>();
-            foreach(var a in l){
-                if (a % 2 == 0)
-                {
-                    lista.Add(a);
-                }
-            }
-            return lista;
-        }
-
-        public static List<int> MayoresDe10(List<int> l)
-        {
-            var lista = new List<int>();
-            foreach(var a in l)
+            if(to < from || from < 0)
             {
-                if (a > 10)
+                throw new ArgumentException("Los argumentos no son correctos");
+                
+            }
+            else
+            {
+                for (var i = from; i <= to; i++)
                 {
-                    lista.Add(a);
+                    if (i % 2 == 0) { yield return i; }
                 }
             }
-            return lista;
         }
 
+        public static IEnumerable<int> MayoresDe10(int from, int to)
+        {
+            if (to < from || to <= 10 || from < 0)
+            {
+                throw new ArgumentException("Los argumentos no son correctos.");
+            }            
+            else
+            {
+                if(from <= 10)
+                {
+                    for (var i = 11; i <= to; i++)
+                    {
+                        yield return i;
+                    }
+                }
+                else
+                {
+                    for (var i = from; i <= to; i++)
+                    {
+                        yield return i;
+                    }
+                }
+                
+            }            
+        }
+
+        public static IEnumerable<int> MenoresDe10(int from, int to)
+        {
+            if (to < from || from >=10 || from < 0)
+            {
+                throw new ArgumentException("Los argumentos no son correctos");
+            }
+            else
+            {
+                if(to <= 10)
+                {
+                    for (var i = from; i <= to; i++)
+                    {
+                        yield return i;
+                    }
+                }
+                else
+                {
+                    for (var i = from; i <= 10; i++)
+                    {
+                        yield return i;
+                    }
+                }
+            }            
+        }
+        
         static void Main(string[] args)
         {
-            List<int> lista = new List<int>
+            try
             {
-                1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19
-            };
-            foreach(var a in Pares(lista))
-            {
-                Console.Write(a + ", ");
+                var items = Pares(20,30);
+                foreach (var item in items)
+                {
+                    Console.WriteLine(item);
+                }
+                Console.WriteLine("__________________________");
             }
-            Console.WriteLine(" ");
-            foreach (var a in MayoresDe10(lista))
+            catch(Exception e)
             {
-                Console.Write(a + ", ");
+                Console.WriteLine(e.Message);
             }
-            Console.WriteLine(" ");
+
+
+            try
+            {
+                var from = 5;
+                var to = 15;
+                var maxPares = Pares(from,to).Max();
+                Console.WriteLine("El máximo de los números pares comprendidos entre {0} y {1} es {2}", 
+                                    from, to, maxPares);
+                var maxMax10 = MayoresDe10(5, 15).Max();
+                Console.WriteLine("El máximo de los números mayores de 10 comprendidos entre {0} y {1} es {2}", 
+                                    from, to, maxMax10);
+                var maxMin10 = MenoresDe10(5, 15).Max();
+                Console.WriteLine("El máximo de los números menores de 10 comprendidos entre {0} y {1} es {2}", 
+                                    from, to, maxMin10);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+
             Console.ReadLine();
         }
     }
-}
+}*/
 
 
 /*namespace Pruebas
