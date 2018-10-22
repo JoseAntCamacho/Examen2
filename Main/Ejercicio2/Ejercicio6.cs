@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio6
+/*namespace Ejercicio6
 {
+    //LO PRIMERO, PRIMERÍSIMO, ES DECIR QUE NI DEL PALO PUEDES HACER ESTO PORQUE ESTÁS VIOLANDO EL PRINCIPIO DE SOLID DE UNICIDAD DE MÉTODOS. 
+    // PRINCIPIO DE RESPONSABILIDAD ÚNICA.
+
     class Program
     {
         delegate int Funcion(int a, int b);
@@ -46,4 +49,4 @@ namespace Ejercicio6
             Console.ReadLine();
         }
     }
-}
+}*/
